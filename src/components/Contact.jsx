@@ -27,22 +27,66 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const getIPAddressAndLocation = async () => {
+    try {
+      const response = await fetch('https://ipapi.co/json/');
+      const data = await response.json();
+      const { ip, city, region, country } = data;
+      return { ip, city, region, country };
+    } catch (error) {
+      console.error('Error fetching IP and location data:', error);
+      return {};
+    }
+  };
+
+  const getBrowserAndDeviceData = async () => {
+    if ('userAgentData' in navigator) {
+      try {
+        const brands = await navigator.userAgentData.getHighEntropyValues(['platform', 'platformVersion', 'uaFullVersion']);
+        const userAgent = navigator.userAgent;
+        const platform = brands.platform;
+        const platformVersion = brands.platformVersion;
+        const browserVersion = brands.uaFullVersion;
+        return { userAgent, platform, platformVersion, browserVersion };
+      } catch (error) {
+        console.error('Error fetching browser and device data:', error);
+        return {};
+      }
+    } else {
+      // Fallback to using navigator.userAgent and navigator.platform for older browsers
+      const userAgent = navigator.userAgent;
+      const platform = navigator.platform;
+      return { userAgent, platform };
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
+    const locationData = await getIPAddressAndLocation();
+    const browserAndDeviceData = await getBrowserAndDeviceData();
+
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        'service_661oi08',
+        'template_r3tiykj',
         {
           from_name: form.name,
-          to_name: "Test message",
+          to_name: "Daniel",
           from_email: form.email,
           to_email: "minqz2009@gmail.com",
           message: form.message,
+          ip_address: locationData.ip || "Not available",
+          city: locationData.city || "Not available",
+          region: locationData.region || "Not available",
+          country: locationData.country || "Not available",
+          user_agent: browserAndDeviceData.userAgent || "Not available",
+          platform: browserAndDeviceData.platform || "Not available",
+          platform_version: browserAndDeviceData.platformVersion || "Not available",
+          browser_version: browserAndDeviceData.browserVersion || "Not available",
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        'uyQyQyaoQ0qo9iSeo'
       )
       .then(
         () => {

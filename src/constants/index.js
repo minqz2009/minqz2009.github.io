@@ -22,9 +22,7 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
+  project1,
   threejs,
   security,
   pytorch,
@@ -50,7 +48,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Low Latency C++ Programing",
+    title: "Low Latency C++/C Programing",
     icon: web,
   },
   {
@@ -142,32 +140,6 @@ const experiences = [
       " Modern C++, template programming, CRTP, lock free programming",
     ],
   },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
 ];
 
 const testimonials = [
@@ -204,20 +176,20 @@ const projects = [
       "TODO",
     tags: [
       {
-        name: "react",
+        name: "tag1",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "tag2",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "tag3",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: project1,
+    source_code_link: "https://github.com/minqz2009",
   },
   {
     name: "TODO",
@@ -225,20 +197,20 @@ const projects = [
       "TODO",
     tags: [
       {
-        name: "react",
+        name: "tag1",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "tag2",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "tag3",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: project1,
+    source_code_link: "https://github.com/minqz2009",
   },
   {
     name: "TODO",
@@ -246,20 +218,20 @@ const projects = [
       "TODO",
     tags: [
       {
-        name: "nextjs",
+        name: "tag1",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "tag2",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "tag3",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: project1,
+    source_code_link: "https://github.com/minqz2009",
   },
 ];
 

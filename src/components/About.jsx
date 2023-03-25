@@ -53,9 +53,9 @@ const About = () => {
         and passion for coding, I have attended multiple coding competitions ranging 
         from ICPC to university hackathons.<br/><br/>
 
-        Throughout my career, I have developed a wide range of skill sets including expertise 
-        in C++ and Python, as well as experience in web app, socket, AI, and OS kernal programming, 
-        as well as cyber security. Currently, I work as a software developer at Eclipse Trading, 
+        Throughout my career, I have developed a wide range of skill sets including  
+        proficiency in C++/C and Python, along with experience in web app development, AI research, OS kernel programming, and cyber security. 
+        Currently, I work as a software developer at Eclipse Trading, 
         a market-making trading company, where I use C++ on a daily basis and have further developed 
         my knowledge of low latency programming.
       </motion.p>
